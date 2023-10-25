@@ -6,11 +6,17 @@
     */
 
     //Entrada
+    nome = prompt(`Informe o seu nome`).trim()
+    senha = prompt(`Informe sua Senha`).trim()
+
+    while(senha == nome){
+        senha = ""
+        senha = prompt(`Negativo! A senha não pode ter o mesmo nome do usuário, informe outra senha.`)
+    }
+    
+    alert(`Usuário:${nome} / Senha:${senha}`)
 
 
-    //Processamento
-
-
-    //Saída
+   
 
 </script>

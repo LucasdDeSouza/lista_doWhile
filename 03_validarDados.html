@@ -1,6 +1,6 @@
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <script>
-    /*
+  /*
     Problema: Validar dados do Usuário
     Faça um programa que leia e valide as seguintes informações:
     Nome: maior que 3 caracteres;
@@ -10,12 +10,52 @@
     Estado Civil: 's', 'c', 'v', 'd';
     */
 
-    //Entrada
+  let nome = prompt(`Informe o seu nome (Maior que 3 caracteres)`).trim();
+  let idade = prompt(`Informe a sua idade (Entre 0 e 150)`).trim();
+  let salário = prompt(`Informe seu Salário (Maior que 0)`).trim();
+  let sexo = prompt(`Informe o sexo, "F" - Feminino / "M" - Masculino`)
+    .toUpperCase()
+    .trim();
+  let estado = prompt(
+    `Informe seu estado civil. "S" - Solteiro / "C" - Casado / "V" - Viúvo / "D" - Divórcio`
+  )
+    .toUpperCase()
+    .trim();
 
+  while (nome.length <= 3) {
+    user = prompt(
+      `Negativo! Informe o seu nome (Maior que 3 caracteres)`
+    ).trim();
+  }
 
-    //Processamento
+  while (idade < 0 || idade > 150 || isNaN(idade)) {
+    idade = prompt(`Negativo! Informe a sua idade (Entre 0 e 150)`).trim();
+  }
 
+  while (salário < 0 || isNaN(salário)) {
+    salário = prompt(`Negativo! Informe seu Salário (Maior que 0)`)
+      .toUpperCase()
+      .trim();
+  }
 
-    //Saída
+  while (sexo != "F" && sexo != "M") {
+    sexo = prompt(`Negativo! Informe o sexo, "F" - Feminino / "M" - Masculino`)
+      .toUpperCase()
+      .trim();
+  }
 
+  while (estado != "S" && estado != "C" && estado != "V" && estado != "D") {
+    estado = prompt(
+      `Negativo! Informe seu estado civil. "S" - Solteiro / "C" - Casado / "V" - Viúvo / "D" - Divórcio`
+    )
+      .toUpperCase()
+      .trim();
+  }
+
+  document.write(`Usuário Criado com sucesso!
+    Nome(${nome})
+    Idade(${idade})
+    Salário(${salário})
+    Sexo(${sexo})
+    Estado Civil(${estado})`);
 </script>
